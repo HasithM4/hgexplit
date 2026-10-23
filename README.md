@@ -4,7 +4,6 @@
 
 ## What's included
 
-- Original HG-branded dark dashboard UI
 - Firmware profile selector for 5.05, 6.72 and 9.00, plus an “Other” profile
 - Upstream reference links for listed firmware profiles
 - Resource links for GoldHEN and community host projects
