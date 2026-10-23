@@ -2,83 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="HG PS4 Exploit Host — a firmware-aware homebrew host dashboard.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="HG PS4 Exploit Host — an independent, firmware-aware PlayStation homebrew resource hub.">
   <title>HG PS4 Exploit Host</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="shell">
-    <header class="topbar">
+  <div class="app-shell">
+    <aside class="sidebar">
       <a class="brand" href="./" aria-label="HG PS4 Exploit Host home">
-        <span class="brand-mark">HG</span>
-        <span><strong>HG PS4</strong><small>EXPLOIT HOST</small></span>
+        <span class="brand-icon">HG<span>•</span></span>
+        <span class="brand-copy"><strong>HG CONSOLE</strong><small>EXPLOIT HOST</small></span>
       </a>
-      <div class="top-meta"><span class="pulse"></span><span>HOST DASHBOARD</span><span class="version">v1.0</span></div>
-    </header>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <a class="nav-item active" href="#dashboard"><span class="nav-symbol">▦</span> Dashboard</a>
+        <a class="nav-item" href="#firmware"><span class="nav-symbol">◈</span> Firmware profiles</a>
+        <a class="nav-item" href="#resources"><span class="nav-symbol">⌘</span> Homebrew resources</a>
+        <a class="nav-item" href="#about"><span class="nav-symbol">ⓘ</span> About HG Host</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-chip"><span class="live-dot"></span><span><b>Interface online</b><small>Static site · v1.1</small></span></div>
+        <div class="sidebar-disclaimer">Independent community project.<br>Not affiliated with Sony.</div>
+      </div>
+    </aside>
 
-    <main>
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div><div class="breadcrumb">HG CONSOLE <span>/</span> DASHBOARD</div><h1>Exploit Host <span>Hub</span></h1></div>
+        <div class="top-actions"><span class="web-status"><i></i> WEB INTERFACE READY</span><a class="github-link" href="https://github.com/HasithM4/hgexplit" target="_blank" rel="noopener noreferrer">⌘ <span>View source</span> ↗</a></div>
+      </header>
+
       <section class="hero">
-        <div class="eyebrow"><span class="line"></span> COMMUNITY HOMEbrew TOOLKIT</div>
-        <h1>Take control of<br><span>your console.</span></h1>
-        <p class="intro">A clean, firmware-aware dashboard for organizing PS4 homebrew resources and compatible host projects.</p>
-        <div class="hero-tags"><span>PS4 BROWSER</span><span>STATIC HOST</span><span>COMMUNITY PROJECTS</span></div>
+        <div class="hero-copy">
+          <div class="hero-kicker"><span class="kicker-line"></span> YOUR CONSOLE. YOUR WORKSPACE.</div>
+          <h2>One hub.<br><em>Built for your setup.</em></h2>
+          <p>Browse firmware profiles and community resources from a lightweight interface made for the PS4 browser.</p>
+          <a class="hero-button" href="#firmware">Choose firmware <span>↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="console-shape"><div class="console-top"></div><div class="console-side"></div><div class="console-light"></div><div class="console-logo">HG</div></div>
+          <div class="art-label label-top"><span class="art-dot"></span> HOMEbrew RESOURCE HUB</div>
+          <div class="art-label label-bottom">BUILT BY HG <span>✳</span></div>
+        </div>
       </section>
 
-      <section class="panel firmware-panel" aria-labelledby="firmware-title">
-        <div class="section-heading">
-          <div><div class="eyebrow">01 / SYSTEM PROFILE</div><h2 id="firmware-title">Select your firmware</h2></div>
-          <span class="section-icon">⌘</span>
-        </div>
-        <p class="muted">Choose the version installed on your console. This dashboard will not detect firmware automatically.</p>
+      <section class="section" id="firmware">
+        <div class="section-head"><div><div class="section-tag">01 — SYSTEM PROFILE</div><h2>Select firmware</h2><p>Choose the system software version installed on your PS4.</p></div><span class="head-mark">01</span></div>
         <div class="firmware-grid" id="firmware-grid">
-          <button class="firmware-card" data-fw="5.05"><span class="fw-number">5.05</span><span class="fw-label">Firmware profile</span><span class="fw-arrow">↗</span></button>
-          <button class="firmware-card" data-fw="6.72"><span class="fw-number">6.72</span><span class="fw-label">Firmware profile</span><span class="fw-arrow">↗</span></button>
-          <button class="firmware-card" data-fw="9.00"><span class="fw-number">9.00</span><span class="fw-label">Firmware profile</span><span class="fw-arrow">↗</span></button>
-          <button class="firmware-card" data-fw="other"><span class="fw-number">OTHER</span><span class="fw-label">Choose another version</span><span class="fw-arrow">↗</span></button>
+          <button class="firmware-card" type="button" data-fw="5.05" aria-pressed="false"><span class="card-top"><span class="card-label">PROFILE A</span><span class="card-corner">↗</span></span><strong>5.05</strong><span class="card-description">Legacy firmware profile</span><span class="card-footer"><span class="mini-dot"></span> Reference available</span></button>
+          <button class="firmware-card" type="button" data-fw="6.72" aria-pressed="false"><span class="card-top"><span class="card-label">PROFILE B</span><span class="card-corner">↗</span></span><strong>6.72</strong><span class="card-description">Firmware profile</span><span class="card-footer"><span class="mini-dot"></span> Reference available</span></button>
+          <button class="firmware-card" type="button" data-fw="9.00" aria-pressed="false"><span class="card-top"><span class="card-label">PROFILE C</span><span class="card-corner">↗</span></span><strong>9.00</strong><span class="card-description">Firmware profile</span><span class="card-footer"><span class="mini-dot"></span> Reference available</span></button>
+          <button class="firmware-card" type="button" data-fw="other" aria-pressed="false"><span class="card-top"><span class="card-label">PROFILE D</span><span class="card-corner">↗</span></span><strong>OTHER</strong><span class="card-description">Other / unknown version</span><span class="card-footer"><span class="mini-dot muted-dot"></span> Check compatibility</span></button>
         </div>
-        <div class="selected-row">
-          <div><span class="tiny-label">SELECTED PROFILE</span><strong id="selected-firmware">None selected</strong></div>
-          <button id="reset-profile" class="text-button" type="button">Reset selection</button>
+        <div class="selection-panel">
+          <div class="selection-indicator"><span class="selection-ring">✓</span><div><small>SELECTED PROFILE</small><strong id="selected-firmware">No firmware selected</strong></div></div>
+          <div class="selection-actions"><span class="selection-hint" id="selection-hint">Select a profile to see available references.</span><button class="button-secondary" id="reset-profile" type="button">Reset</button><a class="button-primary disabled" id="open-reference" href="#" aria-disabled="true">Open reference <span>↗</span></a></div>
+        </div>
+        <p class="fine-print">Reference links open third-party community hosts. This HG-branded interface does not contain exploit binaries or execute a jailbreak itself.</p>
+      </section>
+
+      <section class="section resource-section" id="resources">
+        <div class="section-head"><div><div class="section-tag">02 — COMMUNITY LIBRARY</div><h2>Homebrew resources</h2><p>Explore upstream projects and documentation before using any module.</p></div><a class="see-all" href="https://github.com/GoldHEN/GoldHEN" target="_blank" rel="noopener noreferrer">Browse projects ↗</a></div>
+        <div class="resource-grid">
+          <a class="resource-card" href="https://github.com/GoldHEN/GoldHEN" target="_blank" rel="noopener noreferrer"><span class="resource-icon cyan">GH</span><span class="resource-text"><strong>GoldHEN</strong><small>Project, releases and documentation</small></span><span class="resource-arrow">↗</span></a>
+          <a class="resource-card" href="https://github.com/GamerHack/GamerHack.github.io" target="_blank" rel="noopener noreferrer"><span class="resource-icon violet">GH</span><span class="resource-text"><strong>GamerHack source</strong><small>Original upstream host repository</small></span><span class="resource-arrow">↗</span></a>
+          <a class="resource-card" href="https://github.com/eddieygaming/ps4aio" target="_blank" rel="noopener noreferrer"><span class="resource-icon blue">PS</span><span class="resource-text"><strong>PS4 AIO</strong><small>Community project and technical notes</small></span><span class="resource-arrow">↗</span></a>
         </div>
       </section>
 
-      <section class="panel" aria-labelledby="resources-title">
-        <div class="section-heading">
-          <div><div class="eyebrow">02 / RESOURCES</div><h2 id="resources-title">Host resources</h2></div>
-          <span class="section-icon">↗</span>
-        </div>
-        <div class="resource-list">
-          <article class="resource">
-            <div class="resource-symbol">GH</div><div class="resource-copy"><h3>GoldHEN project</h3><p>Homebrew enabler project, documentation and release information.</p><a href="https://github.com/GoldHEN/GoldHEN" target="_blank" rel="noopener noreferrer">Open official project ↗</a></div><span class="resource-status">EXTERNAL</span>
-          </article>
-          <article class="resource">
-            <div class="resource-symbol">GH</div><div class="resource-copy"><h3>GamerHack source</h3><p>Review the original host structure and give proper credit when adapting code.</p><a href="https://github.com/GamerHack/GamerHack.github.io" target="_blank" rel="noopener noreferrer">View source repository ↗</a></div><span class="resource-status">SOURCE</span>
-          </article>
-          <article class="resource">
-            <div class="resource-symbol">PS</div><div class="resource-copy"><h3>PS4 AIO community project</h3><p>Review firmware-specific host flows, offline caching notes and project documentation.</p><a href="https://github.com/eddieygaming/ps4aio" target="_blank" rel="noopener noreferrer">Review project ↗</a></div><span class="resource-status">COMMUNITY</span>
-          </article>
+      <section class="status-section" id="about">
+        <div class="status-copy"><div class="section-tag">03 — PROJECT STATUS</div><h2>Built different.<br>Kept transparent.</h2><p>HG PS4 Exploit Host is an independent interface project. The dashboard is ready to use, while exploit integration and offline caching remain separate, unverified tasks.</p></div>
+        <div class="status-list">
+          <div class="status-row"><span class="status-check">✓</span><span><b>HG dashboard</b><small>Loaded successfully</small></span><span class="state ready">READY</span></div>
+          <div class="status-row"><span class="status-wait">!</span><span><b>Exploit integration</b><small>Not included in this version</small></span><span class="state pending">PENDING</span></div>
+          <div class="status-row"><span class="status-wait">!</span><span><b>Offline caching</b><small>Needs PS4 browser validation</small></span><span class="state pending">UNTESTED</span></div>
         </div>
       </section>
 
-      <section class="panel status-panel" aria-labelledby="status-title">
-        <div class="section-heading"><div><div class="eyebrow">03 / HOST STATUS</div><h2 id="status-title">Environment check</h2></div><span class="section-icon">◎</span></div>
-        <div class="status-grid">
-          <div class="status-item"><span class="status-dot green"></span><div><strong>Dashboard</strong><small>Loaded successfully</small></div><b>READY</b></div>
-          <div class="status-item"><span class="status-dot amber"></span><div><strong>Exploit module</strong><small>Not integrated</small></div><b>SETUP NEEDED</b></div>
-          <div class="status-item"><span class="status-dot amber"></span><div><strong>Offline availability</strong><small>Not verified by this starter</small></div><b>UNTESTED</b></div>
-        </div>
-        <div id="notice" class="notice" role="status" aria-live="polite">Choose a firmware profile to update this dashboard.</div>
-      </section>
-
-      <section class="warning">
-        <span class="warning-icon">!</span>
-        <div><strong>Safety and compatibility</strong><p>This is a dashboard starter, not a jailbreak by itself. Firmware-specific exploit chains and payload binaries must come from projects you have reviewed, with license and compatibility checks. A payload can crash a console or cause data loss.</p></div>
-      </section>
+      <section class="notice-box"><span class="notice-sign">i</span><div><strong>Compatibility and safety note</strong><p>Always confirm exact firmware support in the upstream project documentation. Unverified payloads can cause crashes or data loss. Check software licenses before redistributing source code or binaries.</p></div></section>
+      <footer><span class="footer-brand">HG <b>PS4 EXPLOIT HOST</b></span><span>Independent community project · No Sony affiliation</span><a href="https://github.com/HasithM4/hgexplit" target="_blank" rel="noopener noreferrer">Open source repository ↗</a></footer>
     </main>
-
-    <footer><span>HG PS4 EXPLOIT HOST</span><span>Independent community project · Not affiliated with Sony</span></footer>
   </div>
   <script src="app.js"></script>
 </body>
